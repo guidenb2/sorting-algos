@@ -16,13 +16,8 @@ void generator(int size, int *arr) {
    srand(time(0));
 
    /* Generate random integer array */
-   printf("Your list:\n");
    for(int i=0; i < size; i++) {
       arr[i] = rand();
-   }
-
-   for(int i=0; i < size; i++) {
-      printf("%d\n", arr[i]);
    }
 
    /* Safely exit program */

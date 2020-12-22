@@ -5,6 +5,7 @@ Author: Ben Guiden
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /* Function Prototypes */
 #include "header.h"
@@ -19,14 +20,20 @@ int main (int argc, char *argv[])
    /* Use number generator */
    generator(num, array);
 
+   /* Note time before selection sort */
+   clock_t start = clock();
+
    /* Sort using selection sort */
    s_sort(num, array);
 
-   /* Print */
-   printf("\nSorted:\n");
-   for(int i=0; i < num; i++) {
-      printf("%d\n", array[i]);
-   }
+   /* Note time after selection sort */
+   clock_t end = clock();
+
+   /* Get time taken by subtracting the two times, double is more
+   accurate than float */
+   double time_taken = (double)(end - start)/CLOCKS_PER_SEC;
+
+   printf("Time taken: %.3f seconds.\n", time_taken);
 
    free(array);
    return 0;
