@@ -33,7 +33,7 @@ int main (int argc, char *argv[])
    accurate than float */
    double time_taken = (double)(end - start)/CLOCKS_PER_SEC;
 
-   printf("Time taken: %.3f seconds.\n", time_taken);
+   printf("Number of integers: %d\nTime taken: %.3f seconds\n", num, time_taken);
 
    free(array);
    return 0;
