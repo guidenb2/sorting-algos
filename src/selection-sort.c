@@ -20,7 +20,7 @@ int main (int argc, char *argv[])
    generator(num, array);
 
    /* Sort using selection sort */
-   /* s_sort(num, array); */
+   s_sort(num, array);
 
    /* Print */
    printf("\nSorted:\n");

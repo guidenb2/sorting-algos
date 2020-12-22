@@ -28,3 +28,21 @@ void generator(int size, int *arr) {
    /* Safely exit program */
    return;
 }
+
+
+/* Sorts array by selection sort */
+void s_sort(int size, int *arr) {
+   for(int i=0; i < size; i++) {
+      int min = i;
+      int temp = 0;
+      for (int j = i + 1; j < size; j++) 
+         if (arr[j] < arr[min]) 
+            min = j;
+      temp = arr[min];
+      arr[min] = arr[i];
+      arr[i] = temp;
+   }
+
+   /* Safely exit program */
+   return;
+}
