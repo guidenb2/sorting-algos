@@ -13,9 +13,8 @@ Author: Ben Guiden
 description: returns a list of random integers
 */
 
-int main(int argc, char * argv[1]) {
+int main(int argc, char * argv[]) {
    /* Create and initalise the variables */
-   int array[5];
    int num = 0;
    num = atoi(argv[1]);
 
@@ -24,12 +23,7 @@ int main(int argc, char * argv[1]) {
 
    /* Generate random integers */
    for(int i=0; i < num; i++) {
-      array[i] = rand();
-   }
-
-   /* Print array */
-   for(int i = 0; i < num; i++) {
-      printf("%d\n", array[i]);
+      printf("%d\n", rand());
    }
 
    /* Safely exit program */
