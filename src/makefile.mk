@@ -1,10 +1,8 @@
-targets = selection-sort
+selection-sort: selection-sort.c
+	gcc -o ../bin/$@ $< functions.c
 
-build: $(targets)
-	@true
-
-%: %.c
-	gcc -o ../bin/$@ $<
 
 test:
-	../bin/selection-sort 5
+	../bin/selection-sort.exe 10
+	../bin/selection-sort.exe 1000
+	../bin/selection-sort.exe 100000
