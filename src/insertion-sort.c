@@ -20,12 +20,6 @@ int main (int argc, char *argv[])
    /* Use number generator */
    generator(num, array);
 
-   /* Print unsorted array */
-   printf("Unsorted array:\n");
-   for(int i=0; i < num; i++) {
-      printf("%d\n", array[i]);
-   }
-
    /* Note time before selection sort */
    clock_t start = clock();
 
@@ -34,12 +28,6 @@ int main (int argc, char *argv[])
 
    /* Note time after selection sort */
    clock_t end = clock();
-
-   /* Print sorted array */
-   printf("Sorted array:\n");
-   for(int i=0; i < num; i++) {
-      printf("%d\n", array[i]);
-   }
 
    /* Get time taken by subtracting the two times, double is more
    accurate than float */
