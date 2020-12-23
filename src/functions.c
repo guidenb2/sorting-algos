@@ -41,3 +41,18 @@ void s_sort(int size, int *arr) {
    /* Safely exit program */
    return;
 }
+
+void i_sort(int size, int *arr) {
+   /* init the variables */
+   int curr = 0;
+   int j = 0;
+   for(int i=1; i < size; i++) {
+      curr = arr[i];
+      j = i - 1;
+      while (j >= 0 && arr[j] > curr) {
+         arr[j+1] = arr[j];
+         j--;
+      }
+      arr[j+1] = curr;
+   }
+}
