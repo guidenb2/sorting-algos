@@ -22,6 +22,7 @@ test:
 	../bin/insertion-sort.exe 5000000
 
 clean:
-	@rm -f $(targets)
+	rm -f ../bin/selection-sort
+	rm -f ../bin/insertion-sort
 
 .PHONY: clean
