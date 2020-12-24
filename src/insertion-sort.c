@@ -1,5 +1,5 @@
 /*
-selection-sort.c
+insertion-sort.c
 Author: Ben Guiden
 */
 
@@ -20,13 +20,13 @@ int main (int argc, char *argv[])
    /* Use number generator */
    generator(num, array);
 
-   /* Note time before selection sort */
+   /* Note time before insertion sort */
    clock_t start = clock();
 
-   /* Sort using selection sort */
+   /* Sort using insertion sort */
    i_sort(num, array);
 
-   /* Note time after selection sort */
+   /* Note time after insertion sort */
    clock_t end = clock();
 
    /* Get time taken by subtracting the two times, double is more
