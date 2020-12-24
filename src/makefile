@@ -20,3 +20,8 @@ test:
 	../bin/insertion-sort.exe 1000000
 	../bin/insertion-sort.exe 2000000
 	../bin/insertion-sort.exe 5000000
+
+clean:
+	@rm -f $(targets)
+
+.PHONY: clean
