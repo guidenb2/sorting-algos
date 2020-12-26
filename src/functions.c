@@ -42,10 +42,12 @@ void s_sort(int size, int *arr) {
    return;
 }
 
+/* Sort by insertion sort */
 void i_sort(int size, int *arr) {
    /* init the variables */
    int curr = 0;
    int j = 0;
+   /* Sort */
    for(int i=1; i < size; i++) {
       curr = arr[i];
       j = i - 1;
@@ -55,4 +57,25 @@ void i_sort(int size, int *arr) {
       }
       arr[j+1] = curr;
    }
+   /* Safely exit program */
+   return;
+}
+
+/* Sort by bubble sort */ 
+void b_sort(int size, int *arr) {
+   /* init the variables */
+   int prev = 0;
+   int tmp = 0;
+   for(int i = 0; i < size; i++) {
+      for(int curr = 1; curr < size; curr++) {
+         prev = curr - 1;
+         if(arr[prev] > arr[curr]) {
+            tmp = arr[prev];
+            arr[prev] = arr[curr];
+            arr[curr] = tmp;
+         }
+      }
+   }
+   /* Safely exit program */
+   return;
 }
