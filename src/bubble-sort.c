@@ -10,15 +10,22 @@ Author: Ben Guiden
 /* Function Prototypes */
 #include "header.h"
 
+#define BUFFERSIZE 100
+
 int main (int argc, char *argv[])
 {
    /* Create and initalise the variables */
+   char buffer[BUFFERSIZE];
+   fgets(buffer, BUFFERSIZE, stdin);
    int num = 0;
-   num = atoi(argv[1]);
+   num = atoi(buffer);
    int *array = (int*) malloc(sizeof(int)*num);
 
-   /* Use number generator */
-   generator(num, array);
+   /* Add inputs to array */
+   for(int i = 0; i < num; i++) {
+      fgets(buffer, BUFFERSIZE , stdin);
+      array[i] = atoi(buffer);
+   }
 
    /* Note time before quicksort */
    clock_t start = clock();
@@ -33,7 +40,8 @@ int main (int argc, char *argv[])
    accurate than float */
    double time_taken = (double)(end - start)/CLOCKS_PER_SEC;
 
-   printf("Number of integers: %d\nTime taken: %.3f seconds\n", num, time_taken);
+   /* Print duration */
+   time_converter(time_taken, num);
 
    free(array);
    return 0;

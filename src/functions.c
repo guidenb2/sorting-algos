@@ -79,3 +79,18 @@ void b_sort(int size, int *arr) {
    /* Safely exit program */
    return;
 }
+
+/* Convert seconds to hours, minutes and seconds */
+void time_converter(double time, int num) {
+   int hours = 0;
+   int minutes = 0;
+   int seconds = 0;
+   int remaining = 0;
+   hours = time / 360;
+   remaining = time - (hours * 360);
+   minutes = remaining / 60;
+   remaining -= minutes * 60;
+   seconds = remaining;
+   printf("Sorting %d numbers took %d hours %d minutes %d seconds\n", num, hours, minutes, seconds);
+   return;
+}
