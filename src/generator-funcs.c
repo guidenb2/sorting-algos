@@ -8,7 +8,6 @@ Author: Ben Guiden
 #include <stdlib.h> /* a header file with a function we might need */
 #include <time.h>
 
-
 /* Generates a random integer array of length size */
 void unsorted_num_generator(int size, int *arr) {
 

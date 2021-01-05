@@ -41,6 +41,7 @@ int main (int argc, char *argv[])
    double time_taken = (double)(end - start)/CLOCKS_PER_SEC;
 
    /* Print duration */
+   printf("Bubble Sort for ");
    time_converter(time_taken, num);
 
    free(array);
