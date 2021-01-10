@@ -1,5 +1,5 @@
 /*
-bubblesort.c
+quick-sort.c
 Author: Ben Guiden
 */
 
@@ -27,13 +27,13 @@ int main (int argc, char *argv[])
       array[i] = atoi(buffer);
    }
 
-   /* Note time before quicksort */
+   /* Note time before selection sort */
    clock_t start = clock();
 
-   /* Sort using bubblesort */
-   b_sort(num, array);
+   /* Sort using selection sort */
+   q_sort(array, 0, num - 1);
 
-   /* Note time after quicksort */
+   /* Note time after selection sort */
    clock_t end = clock();
 
    /* Get time taken by subtracting the two times, double is more
@@ -41,7 +41,7 @@ int main (int argc, char *argv[])
    double time_taken = (double)(end - start)/CLOCKS_PER_SEC;
 
    /* Print duration */
-   printf("Bubble Sort for ");
+   printf("Quick Sort for ");
    time_converter(time_taken, num);
 
    free(array);

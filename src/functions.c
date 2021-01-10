@@ -44,36 +44,55 @@ void i_sort(int size, int *arr) {
    return;
 }
 
-/* Sort by bubble sort */ 
-void b_sort(int size, int *arr) {
-   /* init the variables */
-   int prev = 0;
+int partition(int *arr, int lo, int hi) {
    int tmp = 0;
-   for(int i = 0; i < size; i++) {
-      for(int curr = 1; curr < size; curr++) {
-         prev = curr - 1;
-         if(arr[prev] > arr[curr]) {
-            tmp = arr[prev];
-            arr[prev] = arr[curr];
-            arr[curr] = tmp;
-         }
+   int part = arr[hi];
+   int i = lo - 1;
+   for(int j = lo; j <= hi - 1; j++) {
+      if(arr[j] <= part) {
+         i++;
+         tmp = arr[i];
+         arr[i] = arr[j];
+         arr[j] = tmp;
       }
    }
-   /* Safely exit program */
-   return;
+   tmp = arr[i + 1];
+   arr[i + 1] = arr[hi];
+   arr[hi] = tmp;
+   return i + 1;
+}
+
+int rand_pivot(int *arr, int lo, int hi) {
+   int tmp = 0;
+   srand(time(0));
+   int pivot = lo + rand() % (hi - lo);
+   tmp = arr[pivot];
+   arr[pivot] = arr[hi];
+   arr[hi] = tmp;
+   return partition(arr, lo, hi);
+}
+
+/* Sort by quick sort */
+void q_sort(int *arr, int lo, int hi) {
+   if (lo < hi)
+   {
+      int pivot = rand_pivot(arr, lo, hi);
+      q_sort(arr, lo, pivot - 1);
+      q_sort(arr, pivot + 1, hi);
+   }
 }
 
 /* Convert seconds to hours, minutes and seconds */
 void time_converter(double time, int num) {
    int hours = 0;
    int minutes = 0;
-   int seconds = 0;
+   double seconds = 0;
    int remaining = 0;
-   hours = time / 360;
-   remaining = time - (hours * 360);
+   hours = time / 3600;
+   remaining = time - (hours * 3600);
    minutes = remaining / 60;
    remaining -= minutes * 60;
-   seconds = remaining;
-   printf("%d numbers took %d hours %d minutes %d seconds\n", num, hours, minutes, seconds);
+   seconds = time - ((hours * 3600) + (minutes * 60));
+   printf("%d numbers took %d hours %d minutes %.2f seconds\n", num, hours, minutes, seconds);
    return;
 }
