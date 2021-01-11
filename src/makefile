@@ -63,16 +63,6 @@ test:
 	../bin/quick-sort.exe < ../test/unsorted.txt
 	../bin/quick-sort.exe < ../test/sorted.txt
 	../bin/quick-sort.exe < ../test/reversed.txt
-
-test2:
-	../bin/selection-sort.exe < ../test/sorted.txt
-	../bin/selection-sort.exe < ../test/reversed.txt
-	../bin/insertion-sort.exe < ../test/unsorted.txt
-	../bin/insertion-sort.exe < ../test/sorted.txt
-	../bin/insertion-sort.exe < ../test/reversed.txt
-	../bin/quick-sort.exe < ../test/unsorted.txt
-	../bin/quick-sort.exe < ../test/sorted.txt
-	../bin/quick-sort.exe < ../test/reversed.txt
 	../bin/generator.exe 5000000
 	../bin/quick-sort.exe < ../test/unsorted.txt
 	../bin/quick-sort.exe < ../test/sorted.txt
@@ -90,7 +80,7 @@ clean:
 	rm -f ../bin/generator
 	rm -f ../bin/selection-sort
 	rm -f ../bin/insertion-sort
-	rm -f ../bin/bubble-sort
+	rm -f ../bin/quick-sort
 	rm -f ../test/reversed.txt
 	rm -f ../test/sorted.txt
 	rm -f ../test/unsorted.txt
